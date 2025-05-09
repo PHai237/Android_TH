@@ -1,52 +1,50 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import java.text.DecimalFormat;
 
 public class MainActivity extends Activity {
-    EditText edtdoC, edtdoF;
+    EditText editdoC, editdoF;
     Button btncf, btnfc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        edtdoC = findViewById(R.id.edtdoC);
-        edtdoF = findViewById(R.id.edtdoF);
+        editdoC = findViewById(R.id.editdoC);
+        editdoF = findViewById(R.id.editdoF);
         btncf = findViewById(R.id.btncf);
         btnfc = findViewById(R.id.btnfc);
+
 
         btncf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 DecimalFormat dcf = new DecimalFormat("#.00");
-                String doc = edtdoC.getText().toString();
-                try {
-                    int C = Integer.parseInt(doc);
-                    edtdoF.setText("" + dcf.format(C * 1.8 + 32));
-                } catch (NumberFormatException e) {
-                    edtdoF.setText("Invalid input");
-                }
+                String doC = editdoC.getText()+" ";
+                int C = Integer.parseInt(doC);
+                double F = C * 1.8 + 32;
+                editdoF.setText(dcf.format(F));
+
             }
         });
+
 
         btnfc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 DecimalFormat dcf = new DecimalFormat("#.00");
-                String dof = edtdoF.getText().toString();
-                try {
-                    int F = Integer.parseInt(dof);
-                    edtdoC.setText("" + dcf.format((F - 32) / 1.8));
-                } catch (NumberFormatException e) {
-                    edtdoC.setText("Invalid input");
-                }
+                String doF = editdoF.getText().toString();
+                int F = Integer.parseInt(doF);
+                double C = (F - 32) / 1.8;
+                editdoC.setText(dcf.format(C));
+
             }
         });
     }
