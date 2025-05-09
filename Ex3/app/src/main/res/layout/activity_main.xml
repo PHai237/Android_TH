@@ -1,0 +1,166 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#2196F3"
+                android:padding="10dp"
+                android:text="Calculator"
+                android:textColor="#004D40"
+                android:textSize="24sp"
+                android:textStyle="bold" /> <!-- Thay đổi màu nền chỉ cho tiêu đề -->
+
+            <!-- Nhập A -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter A"
+                    android:textSize="16sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/edtA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:background="#00000000"
+                    android:text="0"
+                    android:minHeight="48dp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <!-- Nhập B -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter B"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/edtB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:background="#00000000"
+                    android:text="0"
+                    android:minHeight="48dp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <!-- Kết quả -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Result"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/edtResult"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="#00000000"
+                    android:text="0"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:inputType="none"
+                    android:minHeight="48dp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <!-- Các nút -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="4"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btnTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:minHeight="48dp"
+                    android:text="SUM"
+                    android:textColor="#000000"
+                    android:textColorLink="#6B2121" />
+
+                <Button
+                    android:id="@+id/btnSubtraction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SUBTRACT"
+                    android:background="#FFFFFF"
+                    android:textColor="#000000"
+                    android:minHeight="48dp" />
+
+                <Button
+                    android:id="@+id/btnMultiplication"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MULTIPLY"
+                    android:background="#FFFFFF"
+                    android:textColor="#000000"
+                    android:minHeight="48dp" />
+
+                <Button
+                    android:id="@+id/btnDivision"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DIVIDE"
+                    android:background="#FFFFFF"
+                    android:textColor="#000000"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
